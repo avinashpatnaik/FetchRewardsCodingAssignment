@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FetchRewardsCodingAssignment</string>
+    <string name="item_name">ITEM NAME</string>
+    <string name="id">ITEM ID</string>
+    <string name="data_not_available">Data is unavailable. Please try again!</string>
+    <string name="splashscreen">SplashScreen</string>
+    <string name="list_id">List ID</string>
+</resources>
