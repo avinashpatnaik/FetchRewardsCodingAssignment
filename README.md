@@ -8,13 +8,13 @@
  Here is a sample flow.
  
  Splash Screen that runs for 1 second
- <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/splash_screen.png"  align="middle"/> <img 
+ <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/splash_screen.png"  align="middle"/> 
  
  List ID Screen where the data is fetched and rouped by list id
- <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/list_screen.png"  align="middle"/> <img 
+ <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/list_screen.png"  align="middle"/> 
   
  Items Screen where the item id's and the item name's corresponding to the List id are shown
- <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/items_screen.png"  align="middle"/> <img 
+ <img src="https://github.com/avinashpatnaik/FetchRewardsCodingAssignment/blob/main/items_screen.png"  align="middle"/> 
 
 
  
