@@ -1,7 +1,7 @@
 package com.android.fetchrewards;
 
 import com.android.fetchrewards.model.Items;
-import com.android.fetchrewards.viewmodel.ItemsViewModel;
+import com.android.fetchrewards.network.ListRepository;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,14 +22,19 @@ public class ItemSortAndFilterTest {
         items.add(new Items(99, 1, "Item 99"));
         items.add(new Items(66, 2, "Item 66"));
 
-        final ItemsViewModel itemsViewModel = new ItemsViewModel();
-        final List<Items> sortedItems = itemsViewModel.sortByListIdAndId(items);
+        final ListRepository listRepository = new ListRepository();
+        final List<Items> sortedItems = listRepository.sortByListIdAndId(items);
 
-        Assert.assertEquals(99, sortedItems.get(0).getId()); Assert.assertEquals(1, sortedItems.get(0).getListId());
-        Assert.assertEquals(684, sortedItems.get(1).getId()); Assert.assertEquals(1, sortedItems.get(1).getListId());
-        Assert.assertEquals(66, sortedItems.get(2).getId()); Assert.assertEquals(2, sortedItems.get(2).getListId());
-        Assert.assertEquals(755, sortedItems.get(3).getId()); Assert.assertEquals(2, sortedItems.get(3).getListId());
-        Assert.assertEquals(11, sortedItems.get(4).getId()); Assert.assertEquals(11, sortedItems.get(4).getListId());
+        Assert.assertEquals(99, sortedItems.get(0).getId());
+        Assert.assertEquals(1, sortedItems.get(0).getListId());
+        Assert.assertEquals(684, sortedItems.get(1).getId());
+        Assert.assertEquals(1, sortedItems.get(1).getListId());
+        Assert.assertEquals(66, sortedItems.get(2).getId());
+        Assert.assertEquals(2, sortedItems.get(2).getListId());
+        Assert.assertEquals(755, sortedItems.get(3).getId());
+        Assert.assertEquals(2, sortedItems.get(3).getListId());
+        Assert.assertEquals(11, sortedItems.get(4).getId());
+        Assert.assertEquals(11, sortedItems.get(4).getListId());
     }
 
     @Test
@@ -41,8 +46,8 @@ public class ItemSortAndFilterTest {
         items.add(new Items(99, 1, "Item 99"));
         items.add(new Items(66, 2, "Item 66"));
 
-        final ItemsViewModel itemsViewModel = new ItemsViewModel();
-        final List<Items> sortedItems = itemsViewModel.filterNullOrEmptyItems(items);
+        final ListRepository listRepository = new ListRepository();
+        final List<Items> sortedItems = listRepository.filterNullOrEmptyItems(items);
 
         Assert.assertEquals(3, sortedItems.size());
 

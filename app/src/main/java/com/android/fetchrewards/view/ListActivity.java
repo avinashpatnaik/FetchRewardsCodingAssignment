@@ -25,20 +25,21 @@ public class ListActivity extends AppCompatActivity implements ListAdapter.ItemC
 
     private Map<Integer, List<Items>> listItems;
     private ListAdapter listAdapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
 
-        final RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        recyclerView = findViewById(R.id.recyclerview);
         final TextView noData = findViewById(R.id.nodata);
-        final AutoFitGridLayoutManager autoFitGridLayoutManager = new AutoFitGridLayoutManager(this, 500);
-        recyclerView.setLayoutManager(autoFitGridLayoutManager);
-        listAdapter = new ListAdapter(listItems, this);
-        recyclerView.setAdapter(listAdapter);
+
+        initRecyclerView();
 
         final ItemsViewModel itemsViewModel = new ViewModelProvider(this).get(ItemsViewModel.class);
+        itemsViewModel.init();
+
         itemsViewModel.getItemsListObserver().observe(this, itemsList -> {
             if (itemsList != null) {
                 listItems = itemsList;
@@ -48,7 +49,13 @@ public class ListActivity extends AppCompatActivity implements ListAdapter.ItemC
                 noData.setVisibility(View.VISIBLE);
             }
         });
-        itemsViewModel.makeApiCall();
+    }
+
+    private void initRecyclerView() {
+        final AutoFitGridLayoutManager autoFitGridLayoutManager = new AutoFitGridLayoutManager(this, 500);
+        recyclerView.setLayoutManager(autoFitGridLayoutManager);
+        listAdapter = new ListAdapter(listItems, this);
+        recyclerView.setAdapter(listAdapter);
     }
 
     @Override
