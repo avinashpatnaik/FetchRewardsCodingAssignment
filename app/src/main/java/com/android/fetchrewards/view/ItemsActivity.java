@@ -33,7 +33,7 @@ public class ItemsActivity extends AppCompatActivity {
 
         if (itemsForListId != null) {
             textView.setVisibility(View.GONE);
-            final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.items_recyclerview);
+            final RecyclerView recyclerView = findViewById(R.id.items_recyclerview);
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             final ItemsAdapter itemsAdapter = new ItemsAdapter(itemsForListId);
             final RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(Objects.requireNonNull(ContextCompat.getDrawable(this, R.drawable.divider)));

@@ -64,7 +64,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewHold
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            listId = (TextView) itemView.findViewById(R.id.list_id);
+            listId = itemView.findViewById(R.id.list_id);
             itemView.setOnClickListener(this);
         }
 

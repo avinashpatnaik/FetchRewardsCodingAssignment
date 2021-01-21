@@ -22,7 +22,7 @@ import retrofit2.Response;
 public class ListRepository {
 
     private static ListRepository listRepositoryInstance;
-    private MutableLiveData<Map<Integer, List<Items>>> itemsList = new MutableLiveData<>();
+    private final MutableLiveData<Map<Integer, List<Items>>> itemsList = new MutableLiveData<>();
     private Map<Integer, List<Items>> data;
 
     public static ListRepository getInstance() {

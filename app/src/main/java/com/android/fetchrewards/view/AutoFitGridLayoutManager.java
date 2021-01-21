@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * This class ensures the grid layout adjust's the number of grids in a single row according to the screen size,
- * incase of landscape mode.
+ * in case of landscape mode.
  */
 public class AutoFitGridLayoutManager extends GridLayoutManager {
 

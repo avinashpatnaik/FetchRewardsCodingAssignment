@@ -41,10 +41,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        if (items != null) {
-            return items.size();
-        }
-        return 0;
+        return items.size();
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -54,8 +51,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         public ItemViewHolder(final View itemView) {
             super(itemView);
-            row_item_id = (TextView) itemView.findViewById(R.id.row_item_id);
-            row_item_name = (TextView) itemView.findViewById(R.id.row_item_name);
+            row_item_id = itemView.findViewById(R.id.row_item_id);
+            row_item_name = itemView.findViewById(R.id.row_item_name);
         }
     }
 }
